@@ -11,7 +11,10 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && npm run test",
-    "compile:contracts": "hardhat compile"
+    "compile:contracts": "hardhat compile",
+    "mainnet:hash": "tsx scripts/hash-terms.ts",
+    "mainnet:propose": "tsx scripts/propose-mainnet-deal.ts",
+    "mainnet:read": "tsx scripts/read-mainnet-deal.ts"
   },
   "keywords": ["coti", "agent", "privacy", "encrypted-messaging", "web4", "hackathon"],
   "author": "Carlys",
