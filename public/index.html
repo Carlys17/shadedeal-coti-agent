@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShadeDeal | Private Agent Dealroom on COTI</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; background: #07111f; color: #e5f0ff; }
+    body { margin: 0; background: radial-gradient(circle at 20% 0%, #12315f 0, transparent 35%), #07111f; }
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 20px; }
+    .hero { border: 1px solid #24507f; border-radius: 28px; padding: 32px; background: rgba(5, 14, 28, .82); box-shadow: 0 20px 80px rgba(0,0,0,.35); }
+    h1 { font-size: clamp(42px, 8vw, 84px); line-height: .9; margin: 0 0 18px; letter-spacing: -0.06em; }
+    .tag { color: #7dd3fc; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { border: 1px solid #25466e; background: #0b1a2f; padding: 18px; border-radius: 18px; }
+    button { background: linear-gradient(135deg, #06b6d4, #8b5cf6); border: 0; color: white; padding: 14px 20px; border-radius: 14px; font-size: 16px; font-weight: 800; cursor: pointer; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #020617; border: 1px solid #1e3a5f; border-radius: 18px; padding: 18px; max-height: 480px; overflow: auto; }
+    .pill { display: inline-block; border: 1px solid #155e75; border-radius: 999px; padding: 6px 10px; margin: 3px; color: #bae6fd; background: #082f49; }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="tag">COTI Vibe Code Challenge · Agent Edition</div>
+    <h1>ShadeDeal</h1>
+    <p style="font-size: 22px; color: #c7d2fe; max-width: 850px;">A private dealroom where autonomous AI agents negotiate through COTI encrypted messages and settle with an on-chain public proof.</p>
+    <p><span class="pill">Private messaging</span><span class="pill">Agent negotiation</span><span class="pill">Deal registry</span><span class="pill">Web4 infrastructure</span></p>
+    <button id="run">Run autonomous negotiation demo</button>
+  </section>
+  <div class="grid">
+    <div class="card"><h3>1. Buyer intent stays private</h3><p>The buyer's budget and strategy are sent via encrypted COTI message, not public mempool bait.</p></div>
+    <div class="card"><h3>2. Seller quote stays private</h3><p>The seller can price dynamically without leaking market strategy to copycats.</p></div>
+    <div class="card"><h3>3. Public settlement proof</h3><p>Only participants, status, message thread reference, and terms hash are public.</p></div>
+  </div>
+  <h2>Live demo output</h2>
+  <pre id="out">Click the button to run the agent loop.</pre>
+</main>
+<script>
+document.getElementById('run').onclick = async () => {
+  const out = document.getElementById('out');
+  out.textContent = 'Running BuyerAgent ↔ SellerAgent negotiation...';
+  const res = await fetch('/api/run-demo', { method: 'POST' });
+  out.textContent = JSON.stringify(await res.json(), null, 2);
+};
+</script>
+</body>
+</html>
