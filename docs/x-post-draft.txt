@@ -10,4 +10,4 @@ Live COTI proof included: encrypted message ID 90 submitted and read back by the
 
 GitHub: https://github.com/Carlys17/shadedeal-coti-agent
 
-@COTInetwork
+@COTINetwork

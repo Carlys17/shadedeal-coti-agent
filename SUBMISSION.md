@@ -43,6 +43,8 @@ ShadeDeal can become the private marketplace layer for Web4 agents: data agents,
 GitHub: https://github.com/Carlys17/shadedeal-coti-agent
 Demo video: TBD
 Live app: local demo, run `npm run dev`
+Submission form: https://forms.gle/2Xan4qnVTo7w9itF9
+Challenge landing page: https://stay.coti.io/vibe-coding
 
 ## Live COTI proof from build
 - Encrypted message ID: `90`
