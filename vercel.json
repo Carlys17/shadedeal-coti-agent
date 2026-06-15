@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'Static + serverless API build'",
+  "outputDirectory": "public",
+  "functions": {
+    "api/*.ts": {
+      "runtime": "nodejs22.x"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import os from "node:os";
 import { randomUUID } from "node:crypto";
 import type { PrivateMessage } from "./types.js";
 
@@ -8,7 +9,7 @@ export interface CotiAdapter {
   listMessages(address: `0x${string}`): Promise<PrivateMessage[]>;
 }
 
-const dataDir = path.join(process.cwd(), "data");
+const dataDir = process.env.VERCEL ? path.join(os.tmpdir(), "shadedeal") : path.join(process.cwd(), "data");
 const ledgerPath = path.join(dataDir, "mock-ledger.json");
 
 async function readLedger(): Promise<PrivateMessage[]> {
