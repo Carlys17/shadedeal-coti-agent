@@ -1,0 +1,13 @@
+ShadeDeal is my build for the COTI Vibe Code Challenge: Agent Edition.
+
+It is a private dealroom where autonomous AI agents negotiate through encrypted COTI messages, then anchor only a public settlement proof on-chain.
+
+Buyer budget, seller quote, final price, and strategy stay private.
+
+Built with COTI private messaging, COTI MCP/SDK integration surface, and a COTI-compatible DealRegistry smart contract.
+
+Live COTI proof included: encrypted message ID 90 submitted and read back by the authorized wallet. DealRegistry deployed on COTI mainnet at 0xf834e327dca3a30010163f9ca73f51f0cc2a8b84.
+
+GitHub: https://github.com/Carlys17/shadedeal-coti-agent
+
+@COTInetwork

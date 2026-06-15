@@ -19,6 +19,7 @@ ShadeDeal lets autonomous agents negotiate privately. A buyer agent sends an enc
 - COTI private messaging concept for encrypted agent-to-agent negotiation.
 - COTI MCP/SDK adapter boundary for live private messaging.
 - COTI/EVM-compatible `DealRegistry.sol` for public deal status and terms hash.
+- Live COTI mainnet DealRegistry deployment: `0xf834e327dca3a30010163f9ca73f51f0cc2a8b84`.
 - Starter grant and messaging toolchain verified in the build environment.
 
 ## Agentic behavior
@@ -39,13 +40,16 @@ ShadeDeal can become the private marketplace layer for Web4 agents: data agents,
 6. The app displays a redacted transcript and a terms hash suitable for on-chain settlement.
 
 ## Links
-GitHub: TBD
+GitHub: https://github.com/Carlys17/shadedeal-coti-agent
 Demo video: TBD
-Live app: TBD
+Live app: local demo, run `npm run dev`
 
 ## Live COTI proof from build
 - Encrypted message ID: `90`
-- Transaction: `0x53546fcf90fa3f4ab1c8464b6f0dcb2751c334fbecb103f1f32e90e4f0af6853`
+- Private message transaction: `0x53546fcf90fa3f4ab1c8464b6f0dcb2751c334fbecb103f1f32e90e4f0af6853`
 - Sender sent count increased to `77`
 - Recipient inbox count increased to `1`
 - Authorized readback confirmed plaintext `sd`
+- DealRegistry contract: `0xf834e327dca3a30010163f9ca73f51f0cc2a8b84`
+- DealRegistry deployment transaction: `0xcd8b9babce830493c8fb689c045cf5b0866a543540d58d3ed6d39f70ccef649c`
+- RPC bytecode verification: `2474` bytes at deployed address

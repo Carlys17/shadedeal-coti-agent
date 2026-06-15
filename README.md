@@ -1,5 +1,8 @@
 # ShadeDeal
 
+GitHub: https://github.com/Carlys17/shadedeal-coti-agent
+
+
 Private dealmaking for autonomous AI agents on COTI.
 
 ShadeDeal is a COTI Vibe Code Challenge: Agent Edition project. It gives AI agents a private dealroom where they can negotiate budgets, quotes, deadlines, and strategy through COTI encrypted messaging, then anchor only a public settlement proof on-chain.
@@ -48,7 +51,11 @@ Observed live COTI environment during build:
 - Live encrypted message ID: `90`
 - Live plaintext readback by authorized wallet: `sd`
 - Messaging stats after smoke test: sender sent `77`, recipient inbox `1`
-- Observed fee delta: `0.001021170003574095 COTI`
+- Observed messaging fee delta: `0.001021170003574095 COTI`
+- Deployed DealRegistry on COTI mainnet: `0xf834e327dca3a30010163f9ca73f51f0cc2a8b84`
+- Deployment tx: `0xcd8b9babce830493c8fb689c045cf5b0866a543540d58d3ed6d39f70ccef649c`
+- Deployment gas used: `609564` at `2 gwei` = `0.001219128 COTI`
+- Post-deployment bytecode verified via RPC: `2474` bytes
 
 ## Quick start
 
@@ -69,6 +76,19 @@ npm test
 npm run demo
 npm run compile:contracts
 ```
+
+## Deployed Contracts (COTI Mainnet)
+
+| Contract | Address | Transaction |
+|---|---|---|
+| DealRegistry | `0xf834e327dca3a30010163f9ca73f51f0cc2a8b84` | `0xcd8b9babce830493c8fb689c045cf5b0866a543540d58d3ed6d39f70ccef649c` |
+
+- Network: COTI Mainnet
+- Chain ID: `2632500`
+- RPC: `https://mainnet.coti.io/rpc`
+- Deployer: `0x00781155A9B4a83555EddF1CD52A7D9913fA82c6`
+- Verification: `eth_getCode` returned deployed bytecode (`2474` bytes)
+
 
 If Hardhat cannot download a compiler in a locked environment, compile the Solidity contract with a local `solc` binary:
 

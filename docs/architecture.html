@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ShadeDeal Architecture</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap');
+body{margin:0;background:#020617;color:#e2e8f0;font-family:'JetBrains Mono',monospace}.wrap{max-width:1180px;margin:0 auto;padding:32px}h1{font-size:34px;margin:0}.sub{color:#94a3b8;margin:8px 0 24px}.card{border:1px solid #1e293b;border-radius:18px;background:#0f172a;padding:18px;box-shadow:0 18px 80px rgba(0,0,0,.35)}svg{width:100%;height:auto}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}.mini{border:1px solid #334155;border-radius:14px;background:#0b1220;padding:14px}.cyan{color:#67e8f9}.green{color:#6ee7b7}.rose{color:#fda4af}
+</style>
+</head>
+<body><div class="wrap">
+<h1>ShadeDeal Architecture</h1>
+<div class="sub">Private agent negotiation on COTI: encrypted messages, autonomous policy, public settlement proof.</div>
+<div class="card">
+<svg viewBox="0 0 1120 720" role="img" aria-label="ShadeDeal architecture diagram">
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/></pattern>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker>
+<marker id="arrowRose" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#fb7185"/></marker>
+</defs>
+<rect width="1120" height="720" fill="#020617"/><rect width="1120" height="720" fill="url(#grid)" opacity=".65"/>
+<!-- arrows behind boxes -->
+<path d="M255 170 C350 150 410 150 500 170" fill="none" stroke="#fb7185" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowRose)"/>
+<path d="M620 170 C710 150 770 150 865 170" fill="none" stroke="#fb7185" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowRose)"/>
+<path d="M500 260 C410 295 350 320 255 355" fill="none" stroke="#fb7185" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrowRose)"/>
+<path d="M255 445 C395 515 550 530 700 560" fill="none" stroke="#38bdf8" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M865 445 C800 485 760 520 700 560" fill="none" stroke="#38bdf8" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M560 300 L560 510" fill="none" stroke="#34d399" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M560 610 L560 660" fill="none" stroke="#a78bfa" stroke-width="2.2" marker-end="url(#arrow)"/>
+<!-- boundary -->
+<rect x="45" y="85" width="1030" height="560" rx="18" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8 5"/>
+<text x="65" y="115" font-size="12" fill="#fbbf24">COTI programmable privacy layer</text>
+<!-- components function via double rect -->
+<g><rect x="70" y="135" width="185" height="115" rx="10" fill="#0f172a"/><rect x="70" y="135" width="185" height="115" rx="10" fill="rgba(8,51,68,.42)" stroke="#22d3ee" stroke-width="1.5"/><text x="92" y="168" font-size="14" font-weight="800" fill="#e0f2fe">BuyerAgent Alpha</text><text x="92" y="196" font-size="10" fill="#bae6fd">private budget</text><text x="92" y="216" font-size="10" fill="#bae6fd">deadline policy</text></g>
+<g><rect x="865" y="135" width="185" height="115" rx="10" fill="#0f172a"/><rect x="865" y="135" width="185" height="115" rx="10" fill="rgba(8,51,68,.42)" stroke="#22d3ee" stroke-width="1.5"/><text x="888" y="168" font-size="14" font-weight="800" fill="#e0f2fe">SellerAgent Oracle</text><text x="888" y="196" font-size="10" fill="#bae6fd">private ask</text><text x="888" y="216" font-size="10" fill="#bae6fd">service capability</text></g>
+<g><rect x="465" y="135" width="190" height="150" rx="10" fill="#0f172a"/><rect x="465" y="135" width="190" height="150" rx="10" fill="rgba(136,19,55,.4)" stroke="#fb7185" stroke-width="1.5"/><text x="492" y="166" font-size="14" font-weight="800" fill="#ffe4e6">COTI Private</text><text x="492" y="184" font-size="14" font-weight="800" fill="#ffe4e6">Messaging</text><text x="492" y="216" font-size="10" fill="#fecdd3">encrypted request</text><text x="492" y="236" font-size="10" fill="#fecdd3">encrypted quote</text><text x="492" y="256" font-size="10" fill="#fecdd3">encrypted decision</text></g>
+<g><rect x="410" y="510" width="300" height="100" rx="10" fill="#0f172a"/><rect x="410" y="510" width="300" height="100" rx="10" fill="rgba(6,78,59,.4)" stroke="#34d399" stroke-width="1.5"/><text x="446" y="545" font-size="14" font-weight="800" fill="#d1fae5">Autonomous Policy Engine</text><text x="446" y="572" font-size="10" fill="#bbf7d0">accept/reject by budget, ETA, risk</text><text x="446" y="592" font-size="10" fill="#bbf7d0">outputs redacted transcript + terms hash</text></g>
+<g><rect x="390" y="655" width="340" height="45" rx="10" fill="#0f172a"/><rect x="390" y="655" width="340" height="45" rx="10" fill="rgba(76,29,149,.4)" stroke="#a78bfa" stroke-width="1.5"/><text x="420" y="683" font-size="14" font-weight="800" fill="#ede9fe">DealRegistry.sol public proof</text></g>
+<g><rect x="70" y="340" width="185" height="115" rx="10" fill="#0f172a"/><rect x="70" y="340" width="185" height="115" rx="10" fill="rgba(30,41,59,.5)" stroke="#94a3b8" stroke-width="1.5"/><text x="92" y="374" font-size="14" font-weight="800" fill="#e2e8f0">Web App / API</text><text x="92" y="402" font-size="10" fill="#cbd5e1">demo trigger</text><text x="92" y="422" font-size="10" fill="#cbd5e1">redacted transcript</text></g>
+<g><rect x="865" y="340" width="185" height="115" rx="10" fill="#0f172a"/><rect x="865" y="340" width="185" height="115" rx="10" fill="rgba(120,53,15,.3)" stroke="#fbbf24" stroke-width="1.5"/><text x="890" y="374" font-size="14" font-weight="800" fill="#fef3c7">COTI MCP/SDK</text><text x="890" y="402" font-size="10" fill="#fde68a">wallet tools</text><text x="890" y="422" font-size="10" fill="#fde68a">privacy bridge</text></g>
+</svg>
+</div>
+<div class="cards"><div class="mini"><b class="cyan">Agentic</b><br/>Agents negotiate and decide automatically.</div><div class="mini"><b class="rose">Private</b><br/>Budget, ask, price, and strategy stay encrypted.</div><div class="mini"><b class="green">Auditable</b><br/>Public proof keeps participant/status/termsHash only.</div></div>
+</div></body></html>
